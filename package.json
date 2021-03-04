@@ -1,6 +1,6 @@
 {
-  "homepage": "https://nsc9605.github.io/workday-scheduler",
-  "name": "workday-scheduler",
+  "homepage": "https://nsc9605.github.io/React-WorkDay_Scheduler",
+  "name": "react-workday_scheduler",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
