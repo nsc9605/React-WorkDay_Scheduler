@@ -1,6 +1,6 @@
 import React from "react";
 import Moment from "react-moment";
-import "./style.css";
+import "../styles/Header.css";
 
 // function Header(props) {
 class Header extends React.Component {

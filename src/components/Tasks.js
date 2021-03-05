@@ -1,5 +1,5 @@
 import React from 'react';
-import "./style.css";
+import "..styles/Tasks.css";
 
 class Tasks extends React.Component {
     constructor(props) {
@@ -12,9 +12,6 @@ class Tasks extends React.Component {
         this.handleEdit = this.handleEdit.bind(this);
         this.handleSave = this.handleSave.bind(this);
     }
-    // state = {
-    //     value: 0
-    // }
 
     handleEdit = () => {
         this.setState({mode: 'edit'});
