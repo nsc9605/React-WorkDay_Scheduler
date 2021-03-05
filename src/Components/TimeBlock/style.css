@@ -1,0 +1,42 @@
+.time-block{
+    text-align: center;
+    border-radius: 15px;
+  }
+  .row {
+    white-space: pre-wrap;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 20px;
+    height: 80px;
+    border-top: 1px solid white;;
+  }
+  
+  .hour {
+    background-color: none;
+    color: #000000;
+    border-top: 1px dashed #000000;
+    padding-top: 10px;
+    padding-left: 25px;
+  }
+  
+  .hour-task {
+    background-color: #ffffff;
+    color: #000000;
+    border-top: 1px dashed #000000;
+    padding-top: 10px;
+    padding-left: 25px;
+  }
+  
+  .past {
+    background-color: rgba(223, 202, 223, 0.87);
+    color: rgb(26, 2, 2);
+  }
+  
+  .present {
+    background-color: #f4f5a8;
+    color: rgb(26, 2, 2);
+  }
+  
+  .future {
+    background-color: #bee8ee;
+    color: rgb(26, 2, 2);
+  }

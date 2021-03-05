@@ -1,0 +1,8 @@
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+    font-family: 'Shadows Into Light', cursive;
+    color: black;
+    border-radius: 0;
+    border-bottom: 10px solid black;
+  }
