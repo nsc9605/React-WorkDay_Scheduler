@@ -1,16 +1,16 @@
 import React  from 'react';
-import Header from './components/Wrapper';
+import Header from './components/Header';
 // import TimeBlock from './components/TimeBlock';
-import Tasks from './components/Tasks/Tasks';
-import Wrapper from './components/Wrapper';
+import Tasks from './components/Tasks';
 // import hours from "./hours.json";
+import "./styles/App.css";
 
 
 function App() {
   return (
     <div>
       <Header />
-      <Wrapper />
+      {/* <TimeBlock /> */}
       <Tasks />
     </div>
   )
