@@ -1,12 +1,20 @@
 import React, { useState } from "react";
+// import TimeBlock from "./TimeBlock";
 import "../styles/Tasks.css";
 
-const Tasks = () => {
-  const [task, setTaskState] = useState("");
+function Tasks(props) {
+  
+  const [taskState, setTaskState] = useState("");
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log("new task is " + task);
+    console.log("new task is " + taskState);
+    // let newTask = props.hourBlock.filter( => friend.id !== id);
+
+    var userTask = document.getElementById(props.task).value;
+    var hourTask = document.getElementById(props.hour);
+
+    localStorage.setItem(hourTask, userTask);
   };
 
   const handleTaskChange = event => {
@@ -15,22 +23,20 @@ const Tasks = () => {
 
   return (
     <div>
-      <div className="row" id="8">
-        <form onSubmit={handleSubmit}>
-          <label className="col-sm-1 hour">8 AM</label>
-          {/* <!-- Use col-md-10 for longer text areas to write tasks --> */}
-          <input
-            value={task}
-            id="hour-task"
+      <div className="row">
+        <form >
+          <label className="col-sm-1 hour">{props.currentHour}</label>
+           <input
+            // value={taskState}
+            // id={props.hour}
             type="text"
             className="col-md-10 time-block"
             placeholder="Tasks"
             onChange={handleTaskChange}
           />
-          {/* <!-- set col-sm-1 to get smaller button and insert "save save" icon for each button element --> */}
           <button
             onClick={handleSubmit}
-            id="8amBtn"
+            id={props.hour}
             type="submit"
             className="saveBtn col-sm-1"
           >
