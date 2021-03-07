@@ -3,7 +3,6 @@ import Moment from "react-moment";
 import "../styles/Header.css";
 
 function Header() {
-  
   return (
     <div>
       <header className="jumbotron">
@@ -11,10 +10,7 @@ function Header() {
         <h2 className="lead">
           A simple calendar app for scheduling your work day
         </h2>
-        {/* <p id="currentDay" className="hour"></p> */}
-
-        <Moment format="dddd MMMM Do YYYY, h:mm a">
-        </Moment>
+        <Moment format="dddd MMMM Do YYYY, h:mm a"></Moment>
       </header>
     </div>
   );

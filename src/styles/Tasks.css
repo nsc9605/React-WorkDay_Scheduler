@@ -2,12 +2,26 @@
   text-align: center;
   border-radius: 15px;
 }
+
+
 .row {
+  /* display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-gap: 40px;
+  padding: 30px; */
   white-space: pre-wrap;
   font-family: "Shadows Into Light", cursive;
   font-size: 20px;
   height: 80px;
   border-top: 1px solid white;
+  align-items: center;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-gap: 40px;
+  padding: 30px;
 }
 
 .hour {
