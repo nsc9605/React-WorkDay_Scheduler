@@ -1,28 +1,25 @@
 .time-block {
   text-align: center;
   border-radius: 15px;
+  height: 3em;
 }
 
-
 .row {
-  /* display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
-  grid-gap: 40px;
-  padding: 30px; */
   white-space: pre-wrap;
   font-family: "Shadows Into Light", cursive;
   font-size: 20px;
-  height: 80px;
+  /* height: 3rem; */
   border-top: 1px solid white;
-  align-items: center;
+  align-items: center; 
 }
 
 form {
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
   grid-gap: 40px;
-  padding: 30px;
-}
+  padding: 10px;
+  width: 100%;
+} 
 
 .hour {
   background-color: none;

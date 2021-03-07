@@ -1,100 +1,112 @@
 import React, { useState } from "react";
-// import TimeBlock from "./TimeBlock";
+// import React from "react";
+// import hour from "../hours.json";
 import "../styles/Tasks.css";
 
-// function Tasks(props) {
-  const Tasks = (props) => {
-  
+
+function Tasks(props) {
+// const Tasks = (props) => {
+
   const [taskState, setTaskState] = useState("");
 
-  const handleSubmit = event => {
+  // const saveInputTask = (event) => {
+   function handleSubmit(event) {
     event.preventDefault();
-    
-    console.log("new task is " + taskState);
+
+    console.log("New task is " + taskState);
   };
-const handleTaskChange = event => {
-  setTaskState(event.target.value);
-}
- 
+
+  const handleTask = (event) => {
+    setTaskState(event.target.value);
+  };
 
   return (
     <div className="container-fluid">
       <div className="row">
-        <form >
+        <form>
           <label className="hour">{props.hour}</label>
-           <input
+          <textarea
+            // value={props.task}
             value={taskState}
-            text={props.task}
+            id={props.id}
             type="text"
             className="time-block"
             placeholder="Tasks"
-            onChange={handleTaskChange}
+            onChange={handleTask}
           />
           <button
-            onClick={handleSubmit}
+            onClick= {handleSubmit}
+            // onClick={() => props.saveInputTask(props.id)}
+            // onClick={saveInputTask}
             id={props.hour}
             type="submit"
             className="saveBtn"
+            value={taskState}
           >
+            Save
             <i className="fas fa-save save"></i>
           </button>
         </form>
       </div>
     </div>
   );
-}
+};
+
 
 export default Tasks;
 
-// import React, { useState } from "react";
-// // import TimeBlock from "./TimeBlock";
-// import "../styles/Tasks.css";
 
-// function Tasks(props) {
+
+// // JS FROM OG WORKDAY
+// {var parent = $(this).parents(".row");
+// var timeId = parseInt(parent.attr("id"));
+// var currentHour = parseInt(moment().format("H"));
+
+// // set variable for current hour for color coding purposes
+// let index = 0;
+
+// // console.log(timeBlock);
+
+// // Function to argue past/present/future time and what to log and when.
+// timeBlock.each(function () {
+
+//     var parent = $(this).parents(".row");
+//     var timeId = parseInt(parent.attr("id"));
+//     var currentHour = parseInt(moment().format("H"));
+//     console.log(timeId);
+
+//     if (timeId < currentHour) {
+//       $(this).addClass("past");
+
+//     } else if (timeId === currentHour) {
+//         $(this).removeClass("past");
+//       $(this).addClass("present");
+      
+//     } else {
+//         $(this).removeClass("past");
+//         $(this).removeClass("present");
+//     $(this).addClass("future");
+
+//     $(this).val(localStorage.getItem(parent.attr("id")));
+//   }
+//   $(this).val(localStorage.getItem(parent.attr("id")));
+//   // console.log($(this).val());localStorage.getItem(parent.attr("id"));
+// })
+
+// // Set .on("click") function and tell when/where to store information
+// $(".saveBtn").on("click", function() {
+ 
+//   var userText = $(this).siblings(".time-block").val();
+// //   console.log(userText);
   
-//   const [taskState, setTaskState] = useState("");
+//   var hourTask = $(this).parents(".row").attr("id");
+//   //is this value correct?
+// //   console.log(hourTask)
 
-//   const handleSubmit = event => {
-//     event.preventDefault();
-//     console.log("new task is " + taskState);
-//     // let newTask = props.hourBlock.filter( => friend.id !== id);
+// // Send to localStorage
+// localStorage.setItem(hourTask, userText);
 
-//     // var userTask = document.getElementById(props.task).value;
-//     // var hourTask = document.getElementById(props.hour);
+// // console.log(localStorage.getItem(hourTask, userText))
 
-//     // localStorage.setItem(hourTask, JSON.stringify(userTask));
-//   };
-
-//   // const handleTaskChange = event => {
-//   //   setTaskState(event.target.value);
-//   // };
-
-//   return (
-//     <div>
-//       <div className="row">
-//         <form >
-//           <label className="col-sm-1 hour">{props.hour}</label>
-//            <input
-//             value={taskState}
-//             id={props.hour}
-//             type="text"
-//             className="col-md-10 time-block"
-//             placeholder="Tasks"
-//             // onChange={handleTaskChange}
-//           />
-//           <button
-//             onClick={handleSubmit}
-//             id={props.hour}
-//             type="submit"
-//             className="saveBtn col-sm-1"
-//           >
-//             <i className="fas fa-save save"></i>
-//           </button>
-//         </form>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Tasks;
-
+// console.log("+++ Get Item from Local Storage: ", localStorage.getItem(hourTask))
+// })}
