@@ -10,7 +10,7 @@ function Header() {
         <h2 className="lead">
           A simple calendar app for scheduling your work day
         </h2>
-        <Moment format="dddd MMMM Do YYYY, h:mm a"></Moment>
+        <h3 id="currentDay" className="lead"><Moment format="dddd MMMM Do YYYY, h:mm a" local></Moment></h3>
       </header>
     </div>
   );
