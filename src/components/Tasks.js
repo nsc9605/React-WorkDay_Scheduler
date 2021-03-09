@@ -31,17 +31,18 @@ function Tasks() {
   function handleInputChange(e) {
     const task = e.target.value;
     setTask({ task });
+    console.log(hoursOfDay.hour);
     localStorage.setItem(hoursOfDay.hour, JSON.stringify(task));
   }
 
   // Function to handle form when button is clicked
-  function handleFormSubmit(e) {
+  function handleFormSubmit(e, i) {
     e.preventDefault();
     const task = e.target.value;
     setHoursOfDay(hoursOfDay);
     setTask({ task });
-    localStorage.getItem(hoursOfDay.hour, JSON.stringify(task));
-    localStorage.setItem(hoursOfDay, JSON.stringify(task));
+    localStorage.getItem(i + 8, JSON.stringify(task));
+    localStorage.setItem(i + 8, JSON.stringify(task));
   }
 
   // Sets change in color depending on local time
@@ -90,7 +91,7 @@ function Tasks() {
               <button
                 type="submit"
                 className="saveBtn"
-                onClick={handleFormSubmit}
+                onClick={(e) => handleFormSubmit(e, index)}
               >
                 Save
                 <i className="fas fa-save save"></i>
