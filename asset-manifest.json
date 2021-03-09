@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/React-WorkDay_Scheduler/static/css/main.c21b12fd.chunk.css",
-    "main.js": "/React-WorkDay_Scheduler/static/js/main.7e542433.chunk.js",
-    "main.js.map": "/React-WorkDay_Scheduler/static/js/main.7e542433.chunk.js.map",
+    "main.css": "/React-WorkDay_Scheduler/static/css/main.9d732506.chunk.css",
+    "main.js": "/React-WorkDay_Scheduler/static/js/main.6f68a6ef.chunk.js",
+    "main.js.map": "/React-WorkDay_Scheduler/static/js/main.6f68a6ef.chunk.js.map",
     "runtime-main.js": "/React-WorkDay_Scheduler/static/js/runtime-main.541bef75.js",
     "runtime-main.js.map": "/React-WorkDay_Scheduler/static/js/runtime-main.541bef75.js.map",
     "static/css/2.fabbef47.chunk.css": "/React-WorkDay_Scheduler/static/css/2.fabbef47.chunk.css",
@@ -10,14 +10,14 @@
     "static/js/2.c2907434.chunk.js.map": "/React-WorkDay_Scheduler/static/js/2.c2907434.chunk.js.map",
     "index.html": "/React-WorkDay_Scheduler/index.html",
     "static/css/2.fabbef47.chunk.css.map": "/React-WorkDay_Scheduler/static/css/2.fabbef47.chunk.css.map",
-    "static/css/main.c21b12fd.chunk.css.map": "/React-WorkDay_Scheduler/static/css/main.c21b12fd.chunk.css.map",
+    "static/css/main.9d732506.chunk.css.map": "/React-WorkDay_Scheduler/static/css/main.9d732506.chunk.css.map",
     "static/js/2.c2907434.chunk.js.LICENSE.txt": "/React-WorkDay_Scheduler/static/js/2.c2907434.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.541bef75.js",
     "static/css/2.fabbef47.chunk.css",
     "static/js/2.c2907434.chunk.js",
-    "static/css/main.c21b12fd.chunk.css",
-    "static/js/main.7e542433.chunk.js"
+    "static/css/main.9d732506.chunk.css",
+    "static/js/main.6f68a6ef.chunk.js"
   ]
 }
