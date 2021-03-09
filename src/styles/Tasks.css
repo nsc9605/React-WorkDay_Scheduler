@@ -32,6 +32,7 @@ form {
 
 .hour {
   background-color: none;
+  font-size: 20px;
   color: #000000;
   border-top: 1px dashed #000000;
   padding-top: 10px;
@@ -59,4 +60,17 @@ form {
 .future {
   background-color: #bee8ee;
   color: rgb(26, 2, 2);
+}
+
+.saveBtn{
+  border-radius: 15px;
+  color: white;
+  background-color: maroon;
+  box-shadow: 4px 4px 4px black;
+}
+
+.saveBtn:hover {
+  font-size: 1.5em;
+  background-color: rgb(182, 98, 98);
+  transition: all .3s ease-in-out;
 }

@@ -129,6 +129,7 @@ This project was creating with help from:
 
 - [ReactJS](https://reactjs.org/)
 - [Create React App](https://github.com/facebook/create-react-app)
+- [Luxon](https://moment.github.io/luxon/docs/manual/install.html)
 - [gh-pages](https://www.npmjs.com/package/gh-pages)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - Terminal / Git Bash

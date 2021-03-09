@@ -7,14 +7,14 @@ function Tasks() {
   // set variables for useEffect args
   const [hoursOfDay, setHoursOfDay] = useState([]);
   const [currentTime] = useState(DateTime.now());
-  const [saveTask, setSaveTask] = useState(
-    JSON.parse(localStorage.getItem(""))
-  );
-  const [displayTasks, setDisplayTasks] = useState();
+  const [task, setTask] = useState([])
+  // (JSON.parse(localStorage.getItem(""))
   const input = useRef();
+  // this.setTask({
+  //   task: ''
+  // });
 
-  console.log(saveTask);
-
+// Set loop to show specific ours of the day 
   useEffect(() => {
     console.log("hello");
     var hoursOfDay = [];
@@ -25,31 +25,39 @@ function Tasks() {
     console.log(currentTime);
   }, [currentTime]);
 
+
   useEffect(() => {
-    var saveTask = '';
+    // var setTask = '';
     for (let i = 0; i <= 9; i++) {
       let storeNewTask = localStorage.getItem(`${i}`);
       if (storeNewTask !== null) {
         document.getElementById(`${i}`).value = storeNewTask;
-        localStorage.setItem(`${i}`, saveTask);
-        localStorage.setItem(hoursOfDay, storeNewTask, saveTask);
+        // localStorage.setItem(`${i}`, setTask);
+        // localStorage.setItem(hoursOfDay, storeNewTask, setTask);
       }
-      setSaveTask(saveTask);
+      // setTask(task);
       // console.log(i);
     }
-  }, [hoursOfDay, saveTask, setSaveTask]);
+  }, [hoursOfDay, task]);
 
-  // const [handleSubmit] = useState();
 
-  // useEffect(() => {
-  function handleSubmit(event) {
-    event.preventDefault();
-    // setSaveTask([event.saveTask]);
-    setSaveTask([...saveTask, input.current.value]);
-    setDisplayTasks([event.displayTasks]);
-    setDisplayTasks(displayTasks);
+    function handleInputChange(e){
+      // const task = e.target;
+      setTask({task: e.target.value})
+    }
+
+  function handleFormSubmit(e) {
+    e.preventDefault()
+    setTask({task: e.target.value});
+    // e.target.reset();
+    // this.setTask({
+    //   task: e.target.value,
+    // })
+  
+    setHoursOfDay(hoursOfDay)
+    setTask(task)
+    localStorage.setItem(hoursOfDay, {setTask})
   }
-  // }, [displayTasks, hoursOfDay]);
 
   const determinePastPresentFuture = (each) => {
     if (currentTime.hour === each.hour) {
@@ -73,29 +81,31 @@ function Tasks() {
         Current Day and Time:{" "}
         {currentTime.toLocaleString(DateTime.DATETIME_MED)}{" "}
       </h3>
-      </div>
+    </div>
       {hoursOfDay.map((each, index) => {
         return (
           <div>
-            <form key={each} onSubmit={handleSubmit}>
-              <label className="hour">
+            <form key={each} onSubmit={handleFormSubmit}>
+              <label className="hour" name="hour">
                 {each.toLocaleString(DateTime.TIME_SIMPLE)}
               </label>
               <input
                 key={index}
+                ref={input}
+                // value={this.state.task}
                 className={determinePastPresentFuture(each)}
                 type="text"
-                ref={input}
                 placeholder="Enter Task Here"
                 id="time-block"
+                onChange={handleInputChange}
               ></input>
               <button
                 type="submit"
                 className="saveBtn"
-                // onClick={handleSubmit}
+                onClick={handleFormSubmit}
               >
                 Save
-              </button>
+              <i className="fas fa-save save"></i></button>
             </form>
           </div>
         );
@@ -105,3 +115,9 @@ function Tasks() {
 }
 
 export default Tasks;
+
+
+
+
+
+
