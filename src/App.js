@@ -1,7 +1,7 @@
 import React from "react";
 import Tasks from "./components/Tasks";
 import "./styles/index.css";
-
+import "./styles/Tasks.css";
 
 function App() {
   return (
@@ -12,3 +12,4 @@ function App() {
 }
 
 export default App;
+

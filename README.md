@@ -4,15 +4,14 @@
 
 ## Description
 
-This is a simple weekly calendar for the average work day 8-5pm. The time blocks change color for past, present, future depending on current time refactored using React
+This App has been refactored using React to replace the original jQuery used in the original app. This is a simple weekly calendar for the average work day 8-5pm. The time blocks change color for past, present, future depending on user's current time. This app allows a user to create, save, and delete a task if they choose.
 
-:round_pushpin: [Click here to navigate to deployed app on Heroku!](https://) :round_pushpin:
+:round_pushpin: [Click here to navigate to deployed React App!](https://nsc9605.github.io/React-WorkDay_Scheduler/) :round_pushpin:
 
 ## Table of Contents
 
 - [Demonstration](#demonstration)
 - [Installation](#installation)
-- [Usage](#usage)
 - [License](#license)
 - [Contribution](#contribution)
 - [Technologies](#technologies)
@@ -20,11 +19,11 @@ This is a simple weekly calendar for the average work day 8-5pm. The time blocks
 
 ## Demonstration
 
-### Home Page
-![Work Those Buns Main](public/assets/img/main.png)
+### Header View
+![Header Display Local Time](./src/img/header.png)
 
-### Stats Page
-![Work Those Buns Stats](public/assets/img/graphs.png)
+### Color Change Timeblocks
+![Change In Color Depending On Time](./src/img/color-change.png)
 
 
 ### Directory Structure
@@ -33,23 +32,23 @@ This is a simple weekly calendar for the average work day 8-5pm. The time blocks
 ├── node_modules
 │
 ├── public
+│   └── favicon.ico
 │   └── index.html
 │   └── manifest.json
 │
 ├── src
-│   └── Components
-│       └── Tasks
-│           └── index.js
-│           └── style.css
-│       └── Title
-│           └── index.js
-│           └── style.css
-│       └── Wrapper
-│           └── index.js
-│           └── style.css
+│   └── components
+│       └── Tasks.js
+│   └── img
+│       └── color-change.png
+│       └── header.png
+│   └── styles
+│       └── App.css
+│       └── index.css
+│       └── Tasks.css
+│
 │   └── App.js
-│   └── App.test.js
-│   └── index.css
+│   └── hour.json
 │   └── index.js
 │
 ├── package-lock.json
@@ -92,22 +91,6 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-## Usage
-
-Once all packages have been installed, users should run the following command in the terminal:
-
-     `npm start`
-
-This command and will instruct the app to begin listening on the `LocalHost: PORT`. This will then instruct users to either `Cmd + Click` for Mac users or `Ctrl + Click` on Windows which will open the browser with the following address or to enter the following in the web browser to deploy the application locally.
-
-    `localhost:8080`.
 
 
 ## License

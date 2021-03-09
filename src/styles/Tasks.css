@@ -1,12 +1,15 @@
 .jumbotron {
   text-align: center;
-  background-color: rgb(196, 222, 201);
-  font-family: 'Shadows Into Light', cursive;
+  background-color: rgb(191, 223, 197);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
 }
 
+.container {
+  padding-bottom: 10px;
+}
 #time-block {
   text-align: center;
   border-radius: 15px;

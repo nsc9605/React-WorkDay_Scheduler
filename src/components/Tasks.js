@@ -7,58 +7,44 @@ function Tasks() {
   // set variables for useEffect args
   const [hoursOfDay, setHoursOfDay] = useState([]);
   const [currentTime] = useState(DateTime.now());
-  const [task, setTask] = useState([])
-  // (JSON.parse(localStorage.getItem(""))
+  const [task, setTask] = useState();
   const input = useRef();
-  // this.setTask({
-  //   task: ''
-  // });
 
-// Set loop to show specific ours of the day 
+  // Set loop to show specific ours of the day
   useEffect(() => {
     console.log("hello");
     var hoursOfDay = [];
     for (let i = 8; i < 18; i++) {
+      // Push the hours desired to display on page and what format
       hoursOfDay.push(DateTime.now().set({ hour: i, minutes: 0 }));
+      var displayHour = localStorage.getItem({ i });
+      if (displayHour === i) {
+        this.setState({ hour: i, task: [] });
+      }
     }
+    // setTask({ task });
     setHoursOfDay(hoursOfDay);
     console.log(currentTime);
   }, [currentTime]);
 
-
-  useEffect(() => {
-    // var setTask = '';
-    for (let i = 0; i <= 9; i++) {
-      let storeNewTask = localStorage.getItem(`${i}`);
-      if (storeNewTask !== null) {
-        document.getElementById(`${i}`).value = storeNewTask;
-        // localStorage.setItem(`${i}`, setTask);
-        // localStorage.setItem(hoursOfDay, storeNewTask, setTask);
-      }
-      // setTask(task);
-      // console.log(i);
-    }
-  }, [hoursOfDay, task]);
-
-
-    function handleInputChange(e){
-      // const task = e.target;
-      setTask({task: e.target.value})
-    }
-
-  function handleFormSubmit(e) {
-    e.preventDefault()
-    setTask({task: e.target.value});
-    // e.target.reset();
-    // this.setTask({
-    //   task: e.target.value,
-    // })
-  
-    setHoursOfDay(hoursOfDay)
-    setTask(task)
-    localStorage.setItem(hoursOfDay, {setTask})
+  // Function to handle change in task and send to localStorage
+  function handleInputChange(e) {
+    const task = e.target.value;
+    setTask({ task });
+    localStorage.setItem(hoursOfDay.hour, JSON.stringify(task));
   }
 
+  // Function to handle form when button is clicked
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    const task = e.target.value;
+    setHoursOfDay(hoursOfDay);
+    setTask({ task });
+    localStorage.getItem(hoursOfDay.hour, JSON.stringify(task));
+    localStorage.setItem(hoursOfDay, JSON.stringify(task));
+  }
+
+  // Sets change in color depending on local time
   const determinePastPresentFuture = (each) => {
     if (currentTime.hour === each.hour) {
       return "present";
@@ -70,21 +56,24 @@ function Tasks() {
     }
   };
 
+  // Return elements to page
   return (
     <div>
-    <div className="jumbotron">
-      <h1 className="display-3">Work Day Scheduler</h1>
-      <h2 className="lead">
-        A simple calendar app for scheduling your work day
-      </h2>
-      <h3>
-        Current Day and Time:{" "}
-        {currentTime.toLocaleString(DateTime.DATETIME_MED)}{" "}
-      </h3>
-    </div>
+      <div className="jumbotron">
+        <h1 className="display-3">Work Day Scheduler</h1>
+        <h2 className="lead">
+          A simple calendar app for scheduling your work day
+        </h2>
+        <h3>
+          Currently:{" "}
+          {/* Set current time to display on page using Luxon documentation */}
+          {currentTime.toLocaleString(DateTime.DATETIME_MED_WITH_WEEKDAY)}{" "}
+        </h3>
+      </div>
+      {/* Map out the hours of day  */}
       {hoursOfDay.map((each, index) => {
         return (
-          <div>
+          <div className="container">
             <form key={each} onSubmit={handleFormSubmit}>
               <label className="hour" name="hour">
                 {each.toLocaleString(DateTime.TIME_SIMPLE)}
@@ -92,7 +81,6 @@ function Tasks() {
               <input
                 key={index}
                 ref={input}
-                // value={this.state.task}
                 className={determinePastPresentFuture(each)}
                 type="text"
                 placeholder="Enter Task Here"
@@ -105,7 +93,8 @@ function Tasks() {
                 onClick={handleFormSubmit}
               >
                 Save
-              <i className="fas fa-save save"></i></button>
+                <i className="fas fa-save save"></i>
+              </button>
             </form>
           </div>
         );
@@ -115,9 +104,3 @@ function Tasks() {
 }
 
 export default Tasks;
-
-
-
-
-
-
