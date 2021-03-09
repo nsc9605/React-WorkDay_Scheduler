@@ -1,14 +1,13 @@
 // import Header from "./components/Header";
 import "../styles/Tasks.css";
 import { DateTime } from "luxon";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 
 function Tasks() {
   // set variables for useEffect args
   const [hoursOfDay, setHoursOfDay] = useState([]);
   const [currentTime] = useState(DateTime.now());
   const [task, setTask] = useState();
-  const input = useRef();
 
   // Set loop to show specific ours of the day
   useEffect(() => {
@@ -31,7 +30,7 @@ function Tasks() {
   function handleInputChange(e) {
     const task = e.target.value;
     setTask({ task });
-    console.log(hoursOfDay.hour);
+    // console.log(hoursOfDay.hour);
     localStorage.setItem(hoursOfDay.hour, JSON.stringify(task));
   }
 
@@ -39,6 +38,12 @@ function Tasks() {
   function handleFormSubmit(e, i) {
     e.preventDefault();
     const task = e.target.value;
+    // let times = i;
+    // for (let i = 8; i + 18; i++) {
+    //   if (times === i) {
+    //     document.setItem(times, i)
+    //   }
+    // }
     setHoursOfDay(hoursOfDay);
     setTask({ task });
     localStorage.getItem(i + 8, JSON.stringify(task));
@@ -81,7 +86,6 @@ function Tasks() {
               </label>
               <textarea
                 key={index}
-                ref={input}
                 className={determinePastPresentFuture(each)}
                 type="text"
                 placeholder="Enter Task Here"
