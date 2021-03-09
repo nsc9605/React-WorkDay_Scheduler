@@ -20,7 +20,7 @@ This App has been refactored using React to replace the original jQuery used in 
 ## Demonstration
 
 ### Header View
-![Header Display Local Time](./src/img/header.png)
+![Header Display Local Time](./src/img/header1.png)
 
 ### Color Change Timeblocks
 ![Change In Color Depending On Time](./src/img/color-change.png)
