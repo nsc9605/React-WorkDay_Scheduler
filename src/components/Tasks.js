@@ -78,7 +78,7 @@ function Tasks() {
               <label className="hour" name="hour">
                 {each.toLocaleString(DateTime.TIME_SIMPLE)}
               </label>
-              <input
+              <textarea
                 key={index}
                 ref={input}
                 className={determinePastPresentFuture(each)}
@@ -86,7 +86,7 @@ function Tasks() {
                 placeholder="Enter Task Here"
                 id="time-block"
                 onChange={handleInputChange}
-              ></input>
+              ></textarea>
               <button
                 type="submit"
                 className="saveBtn"
