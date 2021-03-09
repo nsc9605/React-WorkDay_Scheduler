@@ -35,6 +35,9 @@ form {
 
 textarea {
   resize: none;
+  padding: 10px;
+  align-items: center;
+  text-align: center;
 }
 
 .hour {
