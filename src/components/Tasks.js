@@ -1,13 +1,14 @@
-// import Header from "./components/Header";
 import "../styles/Tasks.css";
 import { DateTime } from "luxon";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 function Tasks() {
   // set variables for useEffect args
   const [hoursOfDay, setHoursOfDay] = useState([]);
   const [currentTime] = useState(DateTime.now());
-  const [task, setTask] = useState();
+  // const [saveNewHours] = useState()
+  // const [task, setTask] = useState();
+  const input = useRef();
 
   // Set loop to show specific ours of the day
   useEffect(() => {
@@ -15,44 +16,46 @@ function Tasks() {
     var hoursOfDay = [];
     for (let i = 8; i < 18; i++) {
       // Push the hours desired to display on page and what format
-      hoursOfDay.push(DateTime.now().set({ hour: i, minutes: 0 }));
-      var displayHour = localStorage.getItem({ i });
-      if (displayHour === i) {
-        this.setState({ hour: i, task: [] });
-      }
+      var displayHour = localStorage.getItem(String(i));
+      hoursOfDay.push({
+        date: DateTime.now().set({ hour: i, minutes: 0 }),
+        task: displayHour ? displayHour : "",
+      });
     }
-    // setTask({ task });
-    setHoursOfDay(hoursOfDay);
+    setHoursOfDay(hoursOfDay, displayHour);
     console.log(currentTime);
   }, [currentTime]);
-
   // Function to handle change in task and send to localStorage
-  function handleInputChange(e) {
+  function handleInputChange(e, i) {
     const task = e.target.value;
-    setTask({ task });
-    // console.log(hoursOfDay.hour);
-    localStorage.setItem(hoursOfDay.hour, JSON.stringify(task));
+    // Loop through each time new task to save each task with hour in localStorage
+    const saveNewHours = hoursOfDay.map((each) => {
+      if (i + 8 === each.date.hour) {
+        return {
+          ...each,
+          task: [task],
+        };
+      }
+      return each;
+    });
+    setHoursOfDay(saveNewHours);
+    console.log(saveNewHours);
   }
 
   // Function to handle form when button is clicked
   function handleFormSubmit(e, i) {
     e.preventDefault();
-    const task = e.target.value;
-    // let times = i;
-    // for (let i = 8; i + 18; i++) {
-    //   if (times === i) {
-    //     document.setItem(times, i)
-    //   }
-    // }
-    setHoursOfDay(hoursOfDay);
-    setTask({ task });
-    localStorage.getItem(i + 8, JSON.stringify(task));
-    localStorage.setItem(i + 8, JSON.stringify(task));
+    // Loop through forEach task input in the handleInputChange function and save the task associate with the correct hour
+    hoursOfDay.forEach((each) => {
+      if (i + 8 === each.date.hour) {
+        // Save each task associated with that hour to localStorage
+        localStorage.setItem(String(i + 8), each.task);
+      }
+    });
   }
-
   // Sets change in color depending on local time
   const determinePastPresentFuture = (each) => {
-    if (currentTime.hour === each.hour) {
+    if (currentTime.hour === each.date.hour) {
       return "present";
     }
     if (currentTime.hour < each.hour) {
@@ -82,15 +85,18 @@ function Tasks() {
           <div className="container">
             <form key={each} onSubmit={handleFormSubmit}>
               <label className="hour" name="hour">
-                {each.toLocaleString(DateTime.TIME_SIMPLE)}
+                {/* add in .date to display in non-military time */}
+                {each.date.toLocaleString(DateTime.TIME_SIMPLE)}
               </label>
               <textarea
-                key={index}
+                // associate any value submitted through each.task
+                ref={input}
+                value={each.task}
                 className={determinePastPresentFuture(each)}
                 type="text"
                 placeholder="Enter Task Here"
                 id="time-block"
-                onChange={handleInputChange}
+                onChange={(e) => handleInputChange(e, index)}
               ></textarea>
               <button
                 type="submit"
