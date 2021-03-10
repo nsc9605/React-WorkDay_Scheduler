@@ -3,5 +3,8 @@
         "datetime",
         "luxon",
         "med"
+    ],
+    "cSpell.words": [
+        "browserslist"
     ]
 }
