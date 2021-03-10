@@ -57,7 +57,7 @@ textarea {
   padding-left: 25px;
 }
 
-.past {
+.future {
   background-color: rgba(223, 202, 223, 0.87);
   color: rgb(26, 2, 2);
 }
@@ -67,7 +67,7 @@ textarea {
   color: rgb(26, 2, 2);
 }
 
-.future {
+.past {
   background-color: #bee8ee;
   color: rgb(26, 2, 2);
 }

@@ -57,9 +57,10 @@ function Tasks() {
     if (currentTime.hour === each.date.hour) {
       return "present";
     }
-    if (currentTime.hour < each.hour) {
+    if (currentTime.hour < each.date.hour) {
       return "past";
-    } else {
+    } 
+    else {
       return "future";
     }
   };
