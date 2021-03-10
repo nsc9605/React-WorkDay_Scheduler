@@ -1,14 +1,11 @@
 import "../styles/Tasks.css";
 import { DateTime } from "luxon";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 
 function Tasks() {
   // set variables for useEffect args
   const [hoursOfDay, setHoursOfDay] = useState([]);
   const [currentTime] = useState(DateTime.now());
-  // const [saveNewHours] = useState()
-  // const [task, setTask] = useState();
-  const input = useRef();
 
   // Set loop to show specific ours of the day
   useEffect(() => {
@@ -39,7 +36,7 @@ function Tasks() {
       return each;
     });
     setHoursOfDay(saveNewHours);
-    console.log(saveNewHours);
+    document.getElementById("time-block").value = saveNewHours;
   }
 
   // Function to handle form when button is clicked
@@ -50,6 +47,8 @@ function Tasks() {
       if (i + 8 === each.date.hour) {
         // Save each task associated with that hour to localStorage
         localStorage.setItem(String(i + 8), each.task);
+        // grab tasks from localStorage and display on page after refreshed
+        document.getElementById("sendTask").value = each.task;
       }
     });
   }
@@ -90,7 +89,7 @@ function Tasks() {
               </label>
               <textarea
                 // associate any value submitted through each.task
-                ref={input}
+                // ref={input}
                 value={each.task}
                 className={determinePastPresentFuture(each)}
                 type="text"
@@ -101,6 +100,7 @@ function Tasks() {
               <button
                 type="submit"
                 className="saveBtn"
+                id="sendTask"
                 onClick={(e) => handleFormSubmit(e, index)}
               >
                 Save
