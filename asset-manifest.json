@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/React-WorkDay_Scheduler/static/css/main.e5063e91.chunk.css",
-    "main.js": "/React-WorkDay_Scheduler/static/js/main.17096914.chunk.js",
-    "main.js.map": "/React-WorkDay_Scheduler/static/js/main.17096914.chunk.js.map",
+    "main.js": "/React-WorkDay_Scheduler/static/js/main.995c6e0f.chunk.js",
+    "main.js.map": "/React-WorkDay_Scheduler/static/js/main.995c6e0f.chunk.js.map",
     "runtime-main.js": "/React-WorkDay_Scheduler/static/js/runtime-main.541bef75.js",
     "runtime-main.js.map": "/React-WorkDay_Scheduler/static/js/runtime-main.541bef75.js.map",
     "static/css/2.fabbef47.chunk.css": "/React-WorkDay_Scheduler/static/css/2.fabbef47.chunk.css",
-    "static/js/2.c2907434.chunk.js": "/React-WorkDay_Scheduler/static/js/2.c2907434.chunk.js",
-    "static/js/2.c2907434.chunk.js.map": "/React-WorkDay_Scheduler/static/js/2.c2907434.chunk.js.map",
+    "static/js/2.568816b4.chunk.js": "/React-WorkDay_Scheduler/static/js/2.568816b4.chunk.js",
+    "static/js/2.568816b4.chunk.js.map": "/React-WorkDay_Scheduler/static/js/2.568816b4.chunk.js.map",
     "index.html": "/React-WorkDay_Scheduler/index.html",
     "static/css/2.fabbef47.chunk.css.map": "/React-WorkDay_Scheduler/static/css/2.fabbef47.chunk.css.map",
     "static/css/main.e5063e91.chunk.css.map": "/React-WorkDay_Scheduler/static/css/main.e5063e91.chunk.css.map",
-    "static/js/2.c2907434.chunk.js.LICENSE.txt": "/React-WorkDay_Scheduler/static/js/2.c2907434.chunk.js.LICENSE.txt"
+    "static/js/2.568816b4.chunk.js.LICENSE.txt": "/React-WorkDay_Scheduler/static/js/2.568816b4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.541bef75.js",
     "static/css/2.fabbef47.chunk.css",
-    "static/js/2.c2907434.chunk.js",
+    "static/js/2.568816b4.chunk.js",
     "static/css/main.e5063e91.chunk.css",
-    "static/js/main.17096914.chunk.js"
+    "static/js/main.995c6e0f.chunk.js"
   ]
 }
