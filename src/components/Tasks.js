@@ -9,7 +9,6 @@ function Tasks() {
 
   // Set loop to show specific ours of the day
   useEffect(() => {
-    console.log("hello");
     var hoursOfDay = [];
     for (let i = 8; i < 18; i++) {
       // Push the hours desired to display on page and what format
@@ -20,7 +19,6 @@ function Tasks() {
       });
     }
     setHoursOfDay(hoursOfDay, displayHour);
-    console.log(currentTime);
   }, [currentTime]);
   // Function to handle change in task and send to localStorage
   function handleInputChange(e, i) {
